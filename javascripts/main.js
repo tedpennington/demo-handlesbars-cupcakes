@@ -14,9 +14,11 @@ $("#welcome").append(welcomeTemplate(welcomeData));
 
 function populatePage(stuff){
     // make a div to hold rendered html
+    let obj = {ccakes: stuff};
     let newDiv = document.createElement("div");
-    newDiv.innerHTML = cakeTemplate(stuff);
+    newDiv.innerHTML = cakeTemplate(obj);
     $("#cake-cards").append(newDiv);
+    eventStuff();
 }
 
 cakeInventory.loadInventory()
